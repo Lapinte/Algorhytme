@@ -24,14 +24,18 @@ namespace Algorhytme
 
             int saisi = int.Parse(Console.ReadLine());
 
-            foreach (LigneMenu ligne in menu)
+            while (true)
             {
-                if (saisi == ligne.Numero)
+                foreach (LigneMenu ligne in menu)
                 {
-                    return saisi;
+                    if (saisi == ligne.Numero)
+                    {
+                        return saisi;
+                    }
                 }
+                Console.WriteLine("Erreur, saisir un choix:");
+                saisi = int.Parse(Console.ReadLine());
             }
-            return -1;
 
             //return menu.SingleOrDefault(x => x.Numero == saisi) != null ? saisi : -1;
         }
