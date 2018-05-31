@@ -10,19 +10,21 @@ namespace Algorhytme
     {
         static void Main(string[] args)
         {
+            List<LigneMenu> menu = new List<LigneMenu>();
 
-        }
-        public static int AfficherMenuEtRenvoyerSaisi(List<string> menu)
-        {
-            foreach (string ligne in menu)
+            menu.Add(new LigneMenu { Numero = 1, Texte = "-  Aller au premier sous menu" });
+            menu.Add(new LigneMenu { Numero = 42, Texte = "-  Aller en enfer" });
+
+            foreach (LigneMenu ligne in menu)
             {
-                Console.WriteLine(ligne);
+                Console.WriteLine($"{ligne.Numero} {ligne.Texte}");
             }
 
+            
             Console.WriteLine("Votre choix :");
 
             int saisi = int.Parse(Console.ReadLine());
-            return saisi;
+
         }
     }
 }

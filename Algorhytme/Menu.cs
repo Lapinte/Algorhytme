@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Algorhytme
 {
-    public class LigneMenu
+    public class Menu
     {
-        public int Numero { get; set; }
-        public string Texte { get; set; }
+
     }
 }
