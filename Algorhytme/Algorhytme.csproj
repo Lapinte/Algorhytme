@@ -42,7 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LigneMenu.cs" />
+    <Compile Include="MenuPerso\LigneMenu.cs" />
+    <Compile Include="MenuPerso\Menu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

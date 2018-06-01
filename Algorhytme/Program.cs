@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Algorhytme.MenuPerso;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,41 +12,25 @@ namespace Algorhytme
         static void Main(string[] args)
         {
             //Création d'un menu composé de plusieurs lignes de type LigneMenu
-            List<LigneMenu> menu = new List<LigneMenu>
-            {
-                new LigneMenu { Numero = 1, Texte = "Aller au sous-menu"},
-                new LigneMenu { Numero = 3, Texte = "Aller au sous-sol"},
-                new LigneMenu { Numero = 42, Texte = "Aller en enfer"},
-            };
-
-            GererMenu(menu);
+            Menu menu = new Menu();
             
-        }
-        private static int GererMenu(List<LigneMenu> menu)
-        {
-            //Affiche les lignes du menu
-            foreach (LigneMenu ligne in menu)
-            {
-                Console.WriteLine($"{ligne.Numero} {ligne.Texte.ToUpper()}");
-            }
+            LigneMenu ligne1 = new LigneMenu { Numero = 1, Texte = "Aller au sous-menu"};
+            LigneMenu ligne2 = new LigneMenu { Numero = 4, Texte = "Aller au sous-sol" };
+            LigneMenu ligne3 = new LigneMenu { Numero = 4, Texte = "Aller encore au sous-sol" };
+            LigneMenu ligne4 = new LigneMenu { Numero = 6, Texte = "Aller a Ibiza" };
+            LigneMenu ligne5 = new LigneMenu { Numero = 42, Texte = "Aller en enfer" };
 
-            //Récupération de la saisie de l'utilisateur
-            Console.WriteLine("Votre choix :");
-            int saisi = int.Parse(Console.ReadLine());
+            menu.InsererLigne(ligne1);
+            menu.InsererLigne(ligne2);
+            menu.InsererLigne(ligne3);
+            menu.InsererLigne(ligne4);
+            menu.InsererLigne(ligne5);
 
-            //Test de la saisie par rapport aux lignes du menu
-            while (true)
-            {
-                foreach (LigneMenu ligne in menu)
-                {
-                    if (saisi == ligne.Numero)
-                    {
-                        return saisi;
-                    }
-                }
-                Console.WriteLine("Erreur, saisir un choix:");
-                saisi = int.Parse(Console.ReadLine());
-            }
+            menu.Afficher();
+
+            int resultat = menu.Choisir();
+            Console.WriteLine(resultat);
+            Console.ReadKey();
 
             //return menu.SingleOrDefault(x => x.Numero == saisi) != null ? saisi : -1;
         }
