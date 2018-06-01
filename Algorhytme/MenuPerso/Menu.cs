@@ -38,6 +38,7 @@ namespace Algorhytme.MenuPerso
 
         public void Afficher()
         {
+            Console.Clear();
             //Affiche les lignes du menu
             foreach (LigneMenu ligne in Lignes)
             {
